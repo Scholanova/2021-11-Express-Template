@@ -15,8 +15,9 @@ function addJohn(knex) {
 }
 
 function addJohnShoes(knex) {
-  return knex('users')
-    .insert({
+  return knex('shoes')
+    .insert([
+      {
         model: 'Vintage',
         brand: 'Bans',
         user_id: JOHN_ID,
@@ -24,11 +25,12 @@ function addJohnShoes(knex) {
       {
         model: 'Crocodile',
         brand: 'Bacoste',
-        user_id: john.id,
+        user_id: JOHN_ID,
       },
       {
         model: 'Sneakers',
         brand: 'Abidas',
-        user_id: john.id,
-      })
+        user_id: JOHN_ID,
+      },
+    ])
 }

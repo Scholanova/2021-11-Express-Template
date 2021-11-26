@@ -15,8 +15,8 @@ function addMarc(knex) {
 }
 
 function addMarcShoes(knex) {
-  return knex('users')
-    .insert(
+  return knex('shoes')
+    .insert([
       {
         model: 'Blanchasse',
         brand: 'Bacoste',
@@ -31,5 +31,6 @@ function addMarcShoes(knex) {
         model: 'Crocodile',
         brand: 'Bacoste',
         user_id: MARC_ID,
-      })
+      },
+    ])
 }
